@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <img src="../../assets/aptiv-logo.svg">
+
+    <form [formGroup]="formLogin">
+        <div>
+          <input type="text" id="register" formControlName="register" placeholder="Registro">
+        </div>
+      
+        <div>
+          <input type="password" id="password" formControlName="password" placeholder="Senha">
+        </div>
+      
+        <button type="button" (click)="entrar()">Entrar</button>
+    </form>
+</div>

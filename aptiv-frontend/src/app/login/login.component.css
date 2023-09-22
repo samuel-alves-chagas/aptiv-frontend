@@ -1,0 +1,11 @@
+.container-fluid {
+    background-image: url("../../assets/login_background.png");
+    width: 100%; /* Largura da div */    
+    height: 100%; /* Altura da div */    
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
+    background-position: center; /* Centraliza a imagem na div */    
+    color: #fff; /* Cor do texto dentro da div (se desejar texto) */    
+    text-align: center; /* Alinhamento do texto (se desejar texto) */    
+    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+}
+
