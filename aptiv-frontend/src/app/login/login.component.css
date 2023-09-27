@@ -9,3 +9,54 @@
     padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
 }
 
+.input-text-registro {
+    width: 200px;
+    height: 25px;
+    margin-top: 280px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    border: none; /* Remova a borda padrão */
+    border-bottom: 1px solid white; /* Adicione uma linha branca na parte inferior */
+    color: white; /* Define a cor do texto como branco */
+    padding: 5px; /* Adicione algum preenchimento para melhor aparência */
+    outline: none; /* Remova o destaque quando focado (opcional) */
+    background-image: url('../../assets/usuario.png');
+    background-size: 25px; /* Defina o tamanho do ícone */
+    background-position: right 10px center; /* Posicione o ícone à direita e centralizado verticalmente */
+    background-repeat: no-repeat; /* Evite a repetição do ícone */
+}
+
+.input-text-senha {
+    width: 200px;
+    height: 25px;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none; /* Remova a borda padrão */
+    border-bottom: 1px solid white; /* Adicione uma linha branca na parte inferior */
+    color: white; /* Define a cor do texto como branco */
+    padding: 5px; /* Adicione algum preenchimento para melhor aparência */
+    outline: none; /* Remova o destaque quando focado (opcional) */
+    background-image: url('../../assets/cadeado.png');
+    background-size: 15px; /* Defina o tamanho do ícone */
+    background-position: right 15px center; /* Posicione o ícone à direita e centralizado verticalmente */
+    background-repeat: no-repeat; /* Evite a repetição do ícone */
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: white; /* Define a cor do placeholder como branco */
+    font-family: "Arial", sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.button-entrar {
+    margin-top: 15px;
+    background-color: #f84018; /* Define a cor de fundo para azul */
+    color: white; /* Define a cor do texto para branco */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Adicione algum preenchimento para melhor aparência */
+    cursor: pointer; /* Mude o cursor para indicar que é clicável */
+    font-family: "Arial", sans-serif;
+    letter-spacing: 2px;
+}

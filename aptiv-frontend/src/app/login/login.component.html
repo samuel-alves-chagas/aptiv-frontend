@@ -1,15 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0-beta3/css/all.min.css" integrity="sha384-d7IbInFrl7doJ/DF4P6pNWSq3cPM2T3U3b5FshfZQk1f7MqqqAVf1yPbYtkIvJpF" crossorigin="anonymous">
+
 <div class="container-fluid">
     <img src="../../assets/aptiv-logo.svg">
 
     <form [formGroup]="formLogin">
         <div>
-          <input type="text" id="register" formControlName="register" placeholder="Registro">
+          <input type="text" id="register" formControlName="register" placeholder="Registro" class="input-text-registro">
         </div>
       
         <div>
-          <input type="password" id="password" formControlName="password" placeholder="Senha">
+          <input type="password" id="password" formControlName="password" placeholder="Senha" class="input-text-senha">
         </div>
       
-        <button type="button" (click)="entrar()">Entrar</button>
+        <button type="button" (click)="entrar()" class="button-entrar" >ENTRAR</button>
     </form>
 </div>
