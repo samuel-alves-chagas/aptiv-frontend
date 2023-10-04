@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start-pwa": "ng build && http-server -p 4200 -c-1 dist/angular-pwa"
+    "start-pwa": "ng build && http-server -p 4200 -c-1 dist/aptiv-frontend"
   },
   "private": true,
   "dependencies": {
