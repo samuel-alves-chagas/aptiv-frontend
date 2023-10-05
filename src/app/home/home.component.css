@@ -1,9 +1,37 @@
-.container-fluid {
+.conatiner-fluid {
     width: 100%;
 }
+.topbar {
+    bottom: inherit;
+    top: 0;
+    background-color: #F9ECE1;
+}
 
-.select-cards {
-    display: grid;
-    grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr 1fr;
-    gap: 16px;
+.topbar-dropdown-profile-mobile .header-item .topbar-dropdown-profile-icon {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.topbar-dropdown-profile-mobile .dropdown-menu .dropdown-item {
+    font-size: 16px;
+    color: var(--gray-1);
+    padding: 1.05rem 1.5rem;
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+}
+
+.topbar-dropdown-profile-mobile .dropdown-menu[x-placement^=top] {
+    top: 18px !important;
+}
+
+.topbar-dropdown-profile-mobile .dropdown-divider {
+    margin: 0 5px;
+    border: 1px solid var(--gray-3);
+}
+
+.profile {
+    background-color: transparent;
+    border: none;
+    color: #F84018;
 }

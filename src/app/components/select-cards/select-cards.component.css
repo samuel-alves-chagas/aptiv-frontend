@@ -1,0 +1,24 @@
+.container-fluid {
+    width: 100%;
+}
+
+.select-cards {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    gap: 16px;
+    display: flex;
+    background-color: red;
+}
+
+.card-body {
+    display: grid;
+    align-items: center;
+    padding: 0.5rem;
+    align-items: center;
+    background-color: yellow;
+    
+}
+
+.card-title {
+    text-align: center;
+}

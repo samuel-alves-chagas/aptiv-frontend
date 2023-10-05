@@ -1,35 +1,21 @@
-<div class="container-fluid">
-    <div class="select-cards">
-        <div class="card">
-            <div class="card-body">
-                <div class="col-md-12 d-flex justify-content-between align-items-center mb-1">
-                    <span>Holerites</span>
-                </div>  
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="col-md-12 d-flex justify-content-between align-items-center mb-1">
-                    <span>Informe de rendimentos</span>
-                </div>  
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="col-md-12 d-flex justify-content-between align-items-center mb-1">
-                    <span>Agendamento de férias</span>
-                </div>  
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <div class="col-md-12 d-flex justify-content-between align-items-center mb-1">
-                    <span>Benefícios</span>
-                </div>  
+<div>
+    <div class="topbar">
+        <div class="d-flex justify-content-end" style="padding-right: 2%;">
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-primary profile" id="dropdownBasic1" ngbDropdownToggle> Karoline
+                    <i class="fa fa-user"></i>
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Action - 1</button>
+                  <button ngbDropdownItem>Another Action</button>
+                  <button ngbDropdownItem>this should be disabled</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <div style="padding-top: 2%;">
+        <app-select-cards></app-select-cards>
+    </div>
 </div>
+
