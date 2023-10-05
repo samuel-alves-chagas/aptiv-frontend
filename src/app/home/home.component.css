@@ -1,0 +1,9 @@
+.container-fluid {
+    width: 100%;
+}
+
+.select-cards {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
