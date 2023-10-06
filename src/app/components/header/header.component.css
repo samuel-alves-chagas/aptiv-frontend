@@ -1,0 +1,17 @@
+.header {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header p {
+  font-size: 2rem;
+  color: #000;
+}
+
+@media (max-width: 576px) {
+  .header p {
+    font-size: 1.5rem
+  }
+}
