@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HoleriteComponent } from './holerite/holerite.component'
+import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendimentos.component'
 
 const routes: Routes = [{
   path: "login",
@@ -17,6 +18,9 @@ const routes: Routes = [{
 }, {
   path: "holerite",
   component: HoleriteComponent
+}, {
+  path: "informe-rendimentos",
+  component: InformeRendimentosComponent
 }];
 
 @NgModule({
