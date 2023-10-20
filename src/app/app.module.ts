@@ -12,7 +12,10 @@ import { ComponentsModule } from './components/components.module';
 import { HoleriteComponent } from './holerite/holerite.component';
 import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendimentos.component';
 import { AgendamentoFeriasComponent } from './agendamento-ferias/agendamento-ferias.component';
-import { BeneficiosComponent } from './beneficios/beneficios.component'
+import { BeneficiosComponent } from './beneficios/beneficios.component';
+import { PainelAdmComponent } from './painel-adm/painel-adm.component';
+import { CadastrarColaboradorComponent } from './cadastrar-colaborador/cadastrar-colaborador.component';
+import { RemoverColaboradorComponent } from './remover-colaborador/remover-colaborador.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { BeneficiosComponent } from './beneficios/beneficios.component'
     HoleriteComponent,
     InformeRendimentosComponent,
     AgendamentoFeriasComponent,
-    BeneficiosComponent
+    BeneficiosComponent,
+    PainelAdmComponent,
+    CadastrarColaboradorComponent,
+    RemoverColaboradorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+.container-fluid {
+    background-color: #F9ECE1;
+    width: 100%; /* Largura da div */    
+    height: 100%; /* Altura da div */    
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
+    background-position: center; /* Centraliza a imagem na div */    
+    color: black; /* Cor do texto dentro da div (se desejar texto) */    
+    text-align: center; /* Alinhamento do texto (se desejar texto) */    
+    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+}
+
+.button-painelAdm {
+    margin-top: 25px;
+    background-color: white;
+    color: #000;
+    border: 2px solid #f84018;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 200px; /* Define a largura desejada para ambos os botões */
+    text-align: left;
+}
+
+.button-painelAdm i {
+    font-size: 25px; /* Tornar o ícone maior */
+}

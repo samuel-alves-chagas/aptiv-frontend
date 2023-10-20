@@ -6,6 +6,9 @@ import { HoleriteComponent } from './holerite/holerite.component'
 import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendimentos.component'
 import { AgendamentoFeriasComponent } from './agendamento-ferias/agendamento-ferias.component';
 import { BeneficiosComponent } from './beneficios/beneficios.component';
+import { PainelAdmComponent } from './painel-adm/painel-adm.component';
+import { CadastrarColaboradorComponent } from './cadastrar-colaborador/cadastrar-colaborador.component';
+import { RemoverColaboradorComponent } from './remover-colaborador/remover-colaborador.component';
 
 const routes: Routes = [{
   path: "login",
@@ -29,6 +32,15 @@ const routes: Routes = [{
 }, {
   path: "beneficios",
   component: BeneficiosComponent
+}, {
+  path: "painelAdm",
+  component: PainelAdmComponent
+}, {
+  path: "cadastrarColaborador",
+  component: CadastrarColaboradorComponent  
+}, {
+  path: "removerColaborador",
+  component: RemoverColaboradorComponent
 }];
 
 @NgModule({
