@@ -10,7 +10,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ComponentsModule } from './components/components.module';
 import { HoleriteComponent } from './holerite/holerite.component';
-import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendimentos.component'
+import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendimentos.component';
+import { AgendamentoFeriasComponent } from './agendamento-ferias/agendamento-ferias.component';
+import { BeneficiosComponent } from './beneficios/beneficios.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InformeRendimentosComponent } from './informe-rendimentos/informe-rendi
     HomeComponent,
     LoginComponent,
     HoleriteComponent,
-    InformeRendimentosComponent
+    InformeRendimentosComponent,
+    AgendamentoFeriasComponent,
+    BeneficiosComponent
   ],
   imports: [
     BrowserModule,

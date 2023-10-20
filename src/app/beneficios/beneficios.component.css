@@ -1,0 +1,17 @@
+.container-fluid {
+  background-color: #F9ECE1;
+  width: 100%; /* Largura da div */    
+  height: 100%; /* Altura da div */    
+  background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
+  background-position: center; /* Centraliza a imagem na div */    
+  color: black; /* Cor do texto dentro da div (se desejar texto) */    
+  text-align: center; /* Alinhamento do texto (se desejar texto) */    
+  padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+}
+
+.texto-topo {
+  margin-top: 40px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: lighter;
+}
