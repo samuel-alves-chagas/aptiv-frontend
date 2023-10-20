@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-agendamento-ferias',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AgendamentoFeriasComponent {
 
+  saida:string = "10/10/2023"
+  retorno:string = "20/10/2023"
 }
