@@ -10,19 +10,19 @@ export class SelectCardsComponent implements OnInit {
   modules = [
     {
       name: 'Holerites',
-      icon: ''
+      icon: 'fa-thin fa-money-check-dollar'
     },
     {
       name: 'Informe de rendimentos',
-      icon: ''
+      icon: 'file-invoice-dollar'
     },
     {
       name: 'Agendamento de férias',
-      icon: ''
+      icon: 'calendar-alt'
     },
     {
       name: 'Benefícios',
-      icon: ''
+      icon: 'grin-alt'
     }
   ]
   constructor(

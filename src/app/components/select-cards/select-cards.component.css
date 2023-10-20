@@ -1,22 +1,31 @@
 .container-fluid {
-    width: 100%;
+    background-color: #1A1C1D;
+    width: 100%; /* Largura da div */    
+    height: 100%; /* Altura da div */    
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
+    background-position: center; /* Centraliza a imagem na div */    
+    color: black; /* Cor do texto dentro da div (se desejar texto) */    
+    text-align: center; /* Alinhamento do texto (se desejar texto) */    
+    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
 }
 
 .select-cards {
-    display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    gap: 16px;
     display: flex;
-    background-color: red;
+    gap: 16px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-body {
-    display: grid;
+    display: flex;
     align-items: center;
     padding: 0.5rem;
-    align-items: center;
-    background-color: yellow;
-    
+    background-color: white;
+    border-style: solid;
+    border-color: #F84018;
+    border-radius: 10px;
+    border-width: 3px;
 }
 
 .card-title {
