@@ -1,37 +1,8 @@
-.conatiner-fluid {
-    width: 100%;
-}
-.topbar {
-    bottom: inherit;
-    top: 0;
-    background-color: #F9ECE1;
-}
-
-.topbar-dropdown-profile-mobile .header-item .topbar-dropdown-profile-icon {
-    color: var(--white);
-    font-size: 24px;
-}
-
-.topbar-dropdown-profile-mobile .dropdown-menu .dropdown-item {
-    font-size: 16px;
-    color: var(--gray-1);
-    padding: 1.05rem 1.5rem;
-    height: 100%;
-    width: 100%;
-    font-weight: 300;
-}
-
-.topbar-dropdown-profile-mobile .dropdown-menu[x-placement^=top] {
-    top: 18px !important;
-}
-
-.topbar-dropdown-profile-mobile .dropdown-divider {
-    margin: 0 5px;
-    border: 1px solid var(--gray-3);
-}
-
-.profile {
-    background-color: transparent;
-    border: none;
-    color: #F84018;
+.class {
+    width: 100%; /* Largura da div */    
+    height: 100%; /* Altura da div */    
+    text-align: center; /* Alinhamento do texto (se desejar texto) */   
+    justify-content: center; 
+    align-items: center;
+    background-color: #1A1C1D;
 }

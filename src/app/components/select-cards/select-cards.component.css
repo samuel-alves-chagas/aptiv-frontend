@@ -1,33 +1,29 @@
-.container-fluid {
+.class {
+    display: flex;
     background-color: #1A1C1D;
     width: 100%; /* Largura da div */    
-    height: 100%; /* Altura da div */    
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
-    background-position: center; /* Centraliza a imagem na div */    
-    color: black; /* Cor do texto dentro da div (se desejar texto) */    
-    text-align: center; /* Alinhamento do texto (se desejar texto) */    
+    height: 100%; /* Altura da div */
+    align-items: center;
+    justify-content: center;
     padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
 }
 
-.select-cards {
-    display: flex;
-    gap: 16px;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-body {
+button {
+    background-color: #F9ECE1;
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    background-color: white;
+    justify-content: left;
+    text-align: center;
+    padding-left: 3rem;
+    font-size: 24px;
+    margin-bottom: 1rem;
     border-style: solid;
     border-color: #F84018;
     border-radius: 10px;
     border-width: 3px;
 }
 
-.card-title {
-    text-align: center;
+ul {
+    list-style-type: none;
+    margin-bottom: 0;
 }

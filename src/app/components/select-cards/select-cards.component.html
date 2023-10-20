@@ -1,12 +1,11 @@
-<div class="container-fluid">
-    <div class="select-cards">
-        <ng-container *ngFor="let module of modules">
-            <div class="card" style="height: 8rem;">
-                <div class="card-body">
-                    <button type="button" class="card-title">{{module.name}} <i style="margin-left: 5px;" class="fa-thin fa-money-check-dollar" ></i></button>
-                </div>
-            </div>
-        </ng-container>
-    </div>
+<div class="class">
+    <ul>
+        <li *ngFor="let module of modules">
+            <button type="button" style="height: 8rem; width: 24rem;">
+                {{module.name}} 
+                <i style="margin-left: 1rem;margin-top: 0.5rem;" [ngClass]="module.icon"></i>
+            </button>
+        </li>
+    </ul>
+    
 </div>
-
