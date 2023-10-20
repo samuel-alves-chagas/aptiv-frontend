@@ -1,0 +1,64 @@
+.container-fluid {
+    background-color: #F9ECE1;
+    width: 100%; /* Largura da div */    
+    height: 100%; /* Altura da div */    
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
+    background-position: center; /* Centraliza a imagem na div */    
+    color: black; /* Cor do texto dentro da div (se desejar texto) */    
+    text-align: center; /* Alinhamento do texto (se desejar texto) */    
+    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+}
+
+.button-cadastrar {
+    margin-top: 15px;
+    background-color: #f84018; /* Define a cor de fundo para azul */
+    color: white; /* Define a cor do texto para branco */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Adicione algum preenchimento para melhor aparência */
+    cursor: pointer; /* Mude o cursor para indicar que é clicável */
+    font-family: "Arial", sans-serif;
+    letter-spacing: 2px;
+}
+
+.input-text-group {
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    padding: 10px;
+    font-style: italic;
+}
+
+.input-text {
+    border: none;
+    border-bottom: 1px solid #8F8F8F;
+    background-color: #F9ECE1;
+    flex: 2; /* Ocupa uma fração maior do espaço disponível */
+    padding: 5px;
+    font-size: 16px;
+}
+
+.input-date-group {
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    padding: 10px;
+    font-style: italic;
+}
+
+.input-date {
+    border: none; /* Remove a borda padrão da caixa de texto */
+    background-color: #F9ECE1;
+    flex: 1; /* Faz a caixa de texto ocupar o espaço restante */
+    padding: 5px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+.input-select-group {
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    padding: 10px;
+    font-style: italic;
+}
+
+.input-select {
+    border: none; /* Remove a borda padrão da caixa de texto */
+    background-color: #F9ECE1;
+    flex: 1; /* Faz a caixa de texto ocupar o espaço restante */
+    padding: 5px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+}
