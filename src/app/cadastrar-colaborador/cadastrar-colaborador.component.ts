@@ -21,7 +21,9 @@ export class CadastrarColaboradorComponent {
       unidade: [null],
       cargo: [null],
       departamento: [null],
-      perfilDeAcesso: [null]
+      perfilDeAcesso: [null],
+      dataDeNascimento: [null]
+
     })
   }
 
