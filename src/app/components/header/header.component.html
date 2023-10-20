@@ -1,3 +1,6 @@
-<div class="header">
-  <p> <i style="margin-left: 10px;" class="fa fa-arrow-left" ></i> {{name}}</p>
+<div [ngClass]="mainClass">
+  <p> 
+    <i style="margin-left: 10px;" [ngClass]="iconClass" ></i>
+    {{name}}
+  </p>
 </div>

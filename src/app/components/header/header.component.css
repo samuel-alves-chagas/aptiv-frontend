@@ -7,7 +7,20 @@
 
 .header p {
   font-size: 2rem;
+}
+
+.admin {
+  background-color: #F84018;
+  color: white;
+}
+
+.user {
+  background-color: white;
   color: #000;
+}
+
+.profile {
+  color: #d9d9d9;
 }
 
 @media (max-width: 576px) {

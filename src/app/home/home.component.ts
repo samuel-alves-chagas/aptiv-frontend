@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   userName = "Karoline"
+  user = "user"
+  icon = "profile"
 }
