@@ -30,4 +30,8 @@ export class CadastrarColaboradorComponent {
   cadastrar() {
     console.log(this.formCadastrarColaborador)
   }
+
+  backToPainel() {
+    this.router.navigate([`../painelAdm`])
+  }
 }

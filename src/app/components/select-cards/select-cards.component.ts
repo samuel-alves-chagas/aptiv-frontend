@@ -24,12 +24,18 @@ export class SelectCardsComponent implements OnInit {
       name: 'Agendamento de férias',
       icon: ['fa-solid','fa-calendar-days'],
       path: '/agendamento-ferias'
+      
     },
     {
       name: 'Benefícios',
       icon: ['fa-solid','fa-grin-alt'],
       path: '/beneficios'
-    }
+    },
+    {
+      name: 'Painel administrativo',
+      icon: ['fa-solid','fa-grin-alt'],
+      path: '/painelAdm'
+    },
   ]
   constructor(
     private router: Router
@@ -38,6 +44,7 @@ export class SelectCardsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   redirectTo(path: any) {

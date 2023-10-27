@@ -18,4 +18,9 @@ export class PainelAdmComponent {
   removerColaborador() {
     this.router.navigate([`../removerColaborador`])
   }
+
+  backToPainel() {
+    this.router.navigate([`../home`])
+  }
+
 }

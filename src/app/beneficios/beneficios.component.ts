@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-beneficios',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class BeneficiosComponent {
 
+  constructor(
+    private router: Router,
+    
+  ) {}
+
+  backToPainel() {
+    this.router.navigate([`../home`])
+  }
 }

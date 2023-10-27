@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   @Input() role!: string;
   @Input() icon!: string;
 
+  @Output() redirectTo = new EventEmitter();
   mainClass: string[] = ["header"]
   iconClass: string[] = []
   constructor(
@@ -36,8 +37,6 @@ export class HeaderComponent implements OnInit {
   }
 
   backToHome() {
-    if(this.icon !== "profile") {
-      this.router.navigate([`../home`])
-    }
+    this.redirectTo.emit();
   }
 }
