@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-cards',
@@ -10,22 +11,28 @@ export class SelectCardsComponent implements OnInit {
   modules = [
     {
       name: 'Holerites',
-      icon: ['fa-solid','fa-money-check-dollar']
+      icon: ['fa-solid','fa-money-check-dollar'],
+      path: '/holerite'
+
     },
     {
       name: 'Informe de rendimentos',
-      icon: ['fa-solid','fa-file-invoice-dollar']
+      icon: ['fa-solid','fa-file-invoice-dollar'],
+      path: '/informe-rendimentos'
     },
     {
       name: 'Agendamento de férias',
-      icon: ['fa-solid','fa-calendar-days']
+      icon: ['fa-solid','fa-calendar-days'],
+      path: '/agendamento-ferias'
     },
     {
       name: 'Benefícios',
-      icon: ['fa-solid','fa-grin-alt']
+      icon: ['fa-solid','fa-grin-alt'],
+      path: '/beneficios'
     }
   ]
   constructor(
+    private router: Router
   ) {
     
   }
@@ -33,4 +40,7 @@ export class SelectCardsComponent implements OnInit {
   ngOnInit() {
   }
 
+  redirectTo(path: any) {
+    this.router.navigate([`../` + path])
+  }
 }

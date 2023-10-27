@@ -23,6 +23,10 @@
   color: #d9d9d9;
 }
 
+.noProfile {
+  cursor: pointer;
+}
+
 @media (max-width: 576px) {
   .header p {
     font-size: 1.5rem

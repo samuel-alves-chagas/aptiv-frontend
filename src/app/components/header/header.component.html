@@ -1,6 +1,6 @@
 <div [ngClass]="mainClass">
   <p> 
-    <i style="margin-left: 10px;" [ngClass]="iconClass" ></i>
+    <i style="margin-left: 10px;" [ngClass]="iconClass" (click)="backToHome()"></i>
     {{name}}
   </p>
 </div>

@@ -1,7 +1,7 @@
 <div class="class">
     <ul>
         <li *ngFor="let module of modules">
-            <button type="button" style="height: 8rem; width: 24rem;">
+            <button type="button" style="height: 8rem; width: 24rem;" (click)="redirectTo(module.path)">
                 {{module.name}} 
                 <i style="margin-left: 1rem;margin-top: 0.5rem;" [ngClass]="module.icon"></i>
             </button>

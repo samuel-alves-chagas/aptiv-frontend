@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,9 @@ export class HeaderComponent implements OnInit {
 
   mainClass: string[] = ["header"]
   iconClass: string[] = []
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (this.role === "admin") {
@@ -28,6 +31,13 @@ export class HeaderComponent implements OnInit {
     } else {
       this.iconClass.push('fa')
       this.iconClass.push('fa-arrow-left')
+      this.iconClass.push('noProfile')
+    }
+  }
+
+  backToHome() {
+    if(this.icon !== "profile") {
+      this.router.navigate([`../home`])
     }
   }
 }
