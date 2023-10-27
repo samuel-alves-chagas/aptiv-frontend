@@ -2,51 +2,75 @@
 
 <div class="container-fluid">
     <form [formGroup]="formCadastrarColaborador">
-        <div class="input-text-group">
-            <label for="nome" style="margin-right: 25px;">Nome:</label>
-            <input type="text" id="nome" formControlName="nome" class="input-text">
-        </div>
-        
-        <div class="input-date-group">
-            <label for="dataDeAdmissao" style="margin-right: 25px;">Data de admissão:</label>
-            <input type="date" id="dataDeAdmissao" formControlName="dataDeAdmissao" class="input-date">
+        <div class="container-select">
+            <div class="input-text-group">
+                <label for="nome" style="margin-right: 25px;">Nome:</label>
+                <input type="text" id="nome" formControlName="nome" class="input-text">
+            </div>
         </div>
 
-        <div class="input-select-group">
-            <label for="unidade" style="margin-right: 25px;">Unidade:</label>
-            <select id="unidade" class="input-select">
-                <ng-container *ngFor="let i of ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal']">
-                <option [value]="i">{{ i }}</option>
-                </ng-container>
-            </select>
+        <div class="container-select">
+            <div class="input-date-group">
+                <label for="dataDeAdmissao" style="margin-right: 25px;">Data de admissão:</label>
+                <input type="date" id="dataDeAdmissao" formControlName="dataDeAdmissao" class="input-date">
+            </div>
         </div>
 
-        <div class="input-text-group">
-            <label for="cargo" style="margin-right: 25px;">Cargo:</label>
-            <input type="text" id="cargo" formControlName="cargo" class="input-text">
+
+        <div class="container-select">
+            <div class="input-select-group">
+                <label for="unidade" style="margin-right: 25px;">Unidade:</label>
+                <select id="unidade" class="input-select">
+                    <ng-container *ngFor="let i of ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal']">
+                        <option [value]="i">{{ i }}</option>
+                    </ng-container>
+                </select>
+            </div>
         </div>
 
-        <div class="input-text-group">
-            <label for="departamento" style="margin-right: 25px;">Departamento:</label>
-            <input type="text" id="departamento" formControlName="departamento" class="input-text">
+
+        <div class="container-select">
+
+
+
+            <div class="input-text-group">
+                <label for="cargo" style="margin-right: 25px;">Cargo:</label>
+                <input type="text" id="cargo" formControlName="cargo" class="input-text">
+            </div>
         </div>
 
-        <div class="input-select-group">
-            <label for="perfilDeAcesso" style="margin-right: 25px;">Perfil de acesso:</label>
-            <select id="perfilDeAcesso" class="input-select">
-                <ng-container *ngFor="let i of ['Padrão', 'Administrativo']">
-                <option [value]="i">{{ i }}</option>
-                </ng-container>
-            </select>
+
+        <div class="container-select">
+            <div class="input-text-group">
+                <label for="departamento" style="margin-right: 25px;">Departamento:</label>
+                <input type="text" id="departamento" formControlName="departamento" class="input-text">
+            </div>
         </div>
 
-        <div class="input-date-group">
-            <label for="dataDeNascimento" style="margin-right: 25px;">Data de nascimento:</label>
-            <input type="date" id="dataDeNascimento" formControlName="dataDeNascimento" class="input-date">
+
+
+        <div class="container-select">
+            <div class="input-select-group">
+                <label for="perfilDeAcesso" style="margin-right: 25px;">Perfil de acesso:</label>
+                <select id="perfilDeAcesso" class="input-select">
+                    <ng-container *ngFor="let i of ['Padrão', 'Administrativo']">
+                        <option [value]="i">{{ i }}</option>
+                    </ng-container>
+                </select>
+            </div>
         </div>
+
+        <div class="container-select">
+            <div class="input-date-group">
+                <label for="dataDeNascimento" style="margin-right: 25px;">Data de nascimento:</label>
+                <input type="date" id="dataDeNascimento" formControlName="dataDeNascimento" class="input-date">
+            </div>
+        </div>
+
 
         <div>
-            <button type="button" style="margin-top: 30px;" (click)="cadastrar()" class="button-cadastrar" >Cadastrar</button>
+            <button type="button" style="margin-top: 30px;" (click)="cadastrar()"
+                class="button-cadastrar">Cadastrar</button>
         </div>
     </form>
 
@@ -54,4 +78,3 @@
         <img src="../../assets/aptiv-logo-preto.png">
     </footer>
 </div>
-  
