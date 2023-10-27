@@ -12,29 +12,38 @@ export class SelectCardsComponent implements OnInit {
     {
       name: 'Holerites',
       icon: ['fa-solid','fa-money-check-dollar'],
-      path: '/holerite'
+      path: '/holerite',
+      visible: true
 
     },
     {
       name: 'Informe de rendimentos',
       icon: ['fa-solid','fa-file-invoice-dollar'],
-      path: '/informe-rendimentos'
+      path: '/informe-rendimentos',
+      visible: true
+
     },
     {
       name: 'Agendamento de férias',
       icon: ['fa-solid','fa-calendar-days'],
-      path: '/agendamento-ferias'
+      path: '/agendamento-ferias',
+      visible: true
+
       
     },
     {
       name: 'Benefícios',
       icon: ['fa-solid','fa-grin-alt'],
-      path: '/beneficios'
+      path: '/beneficios',
+      visible: true
+
     },
     {
       name: 'Painel administrativo',
       icon: ['fa-solid','fa-grin-alt'],
-      path: '/painelAdm'
+      path: '/painelAdm',
+      visible: true
+
     },
   ]
   constructor(
