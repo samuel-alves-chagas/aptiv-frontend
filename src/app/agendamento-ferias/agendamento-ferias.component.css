@@ -15,3 +15,18 @@
   font-size: 25px;
   font-weight: lighter;
 }
+
+.container-select {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 20px;
+  border: 2px solid #f84018;
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+}
