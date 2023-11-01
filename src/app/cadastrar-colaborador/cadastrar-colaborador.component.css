@@ -63,8 +63,39 @@
     font-size: 16px; /* Tamanho da fonte */
 }
 
-.container-select {
+.container-input {
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+.legend-fieldset {
+    font-size: 18px; /* Altera o tamanho da fonte */
+    color: #333; /* Altera a cor do texto */
+    font-weight: bold; /* Define o peso da fonte (pode ser normal, bold, etc.) */
+}
+
+.container-input-fieldset {
+    display: inline-block;
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida com a cor cinza (#ccc) */
+    padding: 5px; /* Adiciona um espaço de preenchimento interno para melhorar a aparência */
+    margin: 5px; /* Adiciona margem para separar os campos */
+}
+
+.container-input-fieldset-descontosBeneficios {
+    display: inline-block;
+    padding: 5px; /* Adiciona um espaço de preenchimento interno para melhorar a aparência */
+    margin: 5px; /* Adiciona margem para separar os campos */
+}
+
+.container-input-fieldset-descontoBeneficio {
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida com a cor cinza (#ccc) */
+    padding: 5px; /* Adiciona um espaço de preenchimento interno para melhorar a aparência */
+    margin: 5px; /* Adiciona margem para separar os campos */
+}
+
+.container-input-fieldset-competencia {
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida com a cor cinza (#ccc) */
+    padding: 5px; /* Adiciona um espaço de preenchimento interno para melhorar a aparência */
+    margin: 5px; /* Adiciona margem para separar os campos */
 }
