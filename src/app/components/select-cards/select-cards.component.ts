@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./select-cards.component.css']
 })
 export class SelectCardsComponent implements OnInit {
+  @Input() role!: string;
 
   modules = [
     {
@@ -42,8 +43,7 @@ export class SelectCardsComponent implements OnInit {
       name: 'Painel administrativo',
       icon: ['fa-solid','fa-grin-alt'],
       path: '/painelAdm',
-      visible: true
-
+      visible: false
     },
   ]
   constructor(
@@ -53,7 +53,9 @@ export class SelectCardsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if (this.role === "admin") {
+      this.modules[4].visible = true
+    }
   }
 
   redirectTo(path: any) {
