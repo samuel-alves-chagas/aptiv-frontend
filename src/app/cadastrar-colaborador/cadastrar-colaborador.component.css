@@ -24,6 +24,7 @@
     background-color: #f2f2f2; /* Fundo cinza claro */
     padding: 10px;
     font-style: italic;
+    border-radius: 8%;
 }
 
 .input-text {
@@ -63,12 +64,6 @@
     font-size: 16px; /* Tamanho da fonte */
 }
 
-.container-input {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
 .legend-fieldset {
     font-size: 18px; /* Altera o tamanho da fonte */
     color: #333; /* Altera a cor do texto */
@@ -76,10 +71,10 @@
 }
 
 .container-input-fieldset {
-    display: inline-block;
-    border: 1px solid #ccc; /* Adiciona uma borda de 1px sólida com a cor cinza (#ccc) */
-    padding: 5px; /* Adiciona um espaço de preenchimento interno para melhorar a aparência */
-    margin: 5px; /* Adiciona margem para separar os campos */
+    /* display: inline-block; */
+    border: 1px solid #ccc;
+    /* padding: 5px;
+    margin: 5px; */
 }
 
 .container-input-fieldset-descontosBeneficios {
