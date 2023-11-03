@@ -1,12 +1,12 @@
 .container-fluid {
     background-image: url("../../assets/login_background.png");
-    width: 100%; /* Largura da div */    
-    height: 100%; /* Altura da div */    
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
-    background-position: center; /* Centraliza a imagem na div */    
+    /* background-color: red; */
+    height: 100vh;
+    background-size: cover;    
+    background-position: center;
     color: #fff; /* Cor do texto dentro da div (se desejar texto) */    
     text-align: center; /* Alinhamento do texto (se desejar texto) */    
-    padding: 99px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+    /*padding: 99px;  */
 }
 
 .input-text-registro {
@@ -59,4 +59,5 @@ input[type="password"]::placeholder {
     cursor: pointer; /* Mude o cursor para indicar que é clicável */
     font-family: "Arial", sans-serif;
     letter-spacing: 2px;
+    border-radius: 4px;
 }
