@@ -6,7 +6,7 @@
     background-position: center; /* Centraliza a imagem na div */    
     color: #fff; /* Cor do texto dentro da div (se desejar texto) */    
     text-align: center; /* Alinhamento do texto (se desejar texto) */    
-    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+    padding: 99px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
 }
 
 .input-text-registro {
