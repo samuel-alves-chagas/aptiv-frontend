@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,13 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './cadastrar-colaborador.component.html',
   styleUrls: ['./cadastrar-colaborador.component.css']
 })
-export class CadastrarColaboradorComponent {
-  public formCadastrarColaborador: FormGroup
+export class CadastrarColaboradorComponent implements OnInit {
+  public formCadastrarColaborador!: FormGroup
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
   ) {
+    
+  }
+  ngOnInit() {
     this.formCadastrarColaborador = this.formBuilder.group({
       nome: null,
       dataDeAdmissao: null,
@@ -40,6 +43,7 @@ export class CadastrarColaboradorComponent {
     })
   }
 
+  
   cadastrar() {
     console.log(this.formCadastrarColaborador)
   }
@@ -50,6 +54,7 @@ export class CadastrarColaboradorComponent {
 
   addDesconto() {
     const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
+    console.debug('descontosArray => ', descontosArray)
     descontosArray.push(this.formBuilder.group({
       tipoDesconto: '',
       valorDesconto: null,

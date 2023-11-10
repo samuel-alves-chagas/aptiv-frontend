@@ -5,13 +5,13 @@
 
     <form [formGroup]="formLogin">
         <div>
-          <input type="text" id="register" formControlName="register" placeholder="Registro" class="input-text-registro">
+          <input type="text" id="registro" formControlName="registro" placeholder="Registro" class="input-text-registro">
         </div>
       
         <div>
-          <input type="password" id="password" formControlName="password" placeholder="Senha" class="input-text-senha">
+          <input type="password" id="senha" formControlName="senha" placeholder="Senha" class="input-text-senha">
         </div>
       
-        <button type="button" (click)="entrar()" class="button-entrar" >ENTRAR</button>
+        <button type="button" (click)="entrar()" class="button-entrar" [disabled]="formLogin.invalid">ENTRAR</button>
     </form>
 </div>

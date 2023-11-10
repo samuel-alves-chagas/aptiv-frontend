@@ -16,6 +16,7 @@ import { BeneficiosComponent } from './beneficios/beneficios.component';
 import { PainelAdmComponent } from './painel-adm/painel-adm.component';
 import { CadastrarColaboradorComponent } from './cadastrar-colaborador/cadastrar-colaborador.component';
 import { RemoverColaboradorComponent } from './remover-colaborador/remover-colaborador.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { RemoverColaboradorComponent } from './remover-colaborador/remover-colab
     }),
     NgbModule,
     NgbDropdownModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -196,8 +196,7 @@
                     <fieldset>
                         <legend class="legend-fieldset">Descontos</legend>
 
-
-                        <ng-container *ngFor="let desconto of getDescontos(); let i = index" [formGroupName]="i">
+                        <ng-container *ngFor="let desconto of formCadastrarColaborador.get('descontos')?.value?.controls; let i = index" [formGroupName]="i">
                             <div class="row justify-content-center mb-2 mt-2">
                                 <div class="col-md-12">
                                     <div class="input-text-group">
