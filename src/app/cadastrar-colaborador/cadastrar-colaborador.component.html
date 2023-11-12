@@ -196,32 +196,43 @@
                     <fieldset>
                         <legend class="legend-fieldset">Descontos</legend>
 
-                        <ng-container *ngFor="let desconto of formCadastrarColaborador.get('descontos')?.value?.controls; let i = index" [formGroupName]="i">
-                            <div class="row justify-content-center mb-2 mt-2">
-                                <div class="col-md-12">
-                                    <div class="input-text-group">
-                                        <label for="tipoDesconto" style="margin-right: 25px;">Tipo:</label>
-                                        <input type="text" id="tipoDesconto" formControlName="tipoDesconto"
-                                            class="input-text">
-                                    </div>
+                        <ng-container *ngIf="controlsDescontos.controls.length">
+                            <form [formGroup]="formCadastrarColaborador">
+
+                                <div >
+                                    <ng-container *ngFor="let descontos of controlsDescontos.controls; index as i">
+                                        <div class="row justify-content-center mb-2 mt-2">
+                                            <div class="col-md-12">
+                                                <div class="input-text-group">
+                                                    <label for="tipoDesconto" style="margin-right: 25px;">Tipo:</label>
+                                                    <input type="text" [id]="'tipoDesconto'" [formControl]="getControl('descontos', 'tipoDesconto', i)"
+                                                        class="input-text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center mb-2 mt-2">
+                                            <div class="col-md-12">
+                                                <div class="input-text-group">
+                                                    <label for="valorDesconto"
+                                                        style="margin-right: 25px;">Valor:</label>
+                                                    <input type="number" [id]="'valorDesconto'"
+                                                    [formControl]="getControl('descontos', 'valorDesconto', i)" class="input-text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="removeDesconto(i)"
+                                            class="fa fa-trash"></i>
+                                        <div style="clear:both;"></div>
+                                    </ng-container>
                                 </div>
-                            </div>
-                            <div class="row justify-content-center mb-2 mt-2">
-                                <div class="col-md-12">
-                                    <div class="input-text-group">
-                                        <label for="valorDesconto" style="margin-right: 25px;">Valor:</label>
-                                        <input type="number" id="valorDesconto" formControlName="valorDesconto"
-                                            class="input-text">
-                                    </div>
-                                </div>
-                            </div>
-                            <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="removeDesconto(i)"
-                                class="fa fa-trash"></i>
-                            <div style="clear:both;"></div>
+                            </form>
+                            
+
                         </ng-container>
-
-                        <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="addDesconto()" class="fa fa-plus"></i>
-
+                        <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="addDesconto()"
+                                class="fa fa-plus"></i>
+                        
                     </fieldset>
 
                     <fieldset>

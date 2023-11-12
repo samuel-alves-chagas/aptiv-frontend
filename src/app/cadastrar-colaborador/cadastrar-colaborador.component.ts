@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class CadastrarColaboradorComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
   ) {
-    
+
   }
   ngOnInit() {
     this.formCadastrarColaborador = this.formBuilder.group({
@@ -35,15 +35,30 @@ export class CadastrarColaboradorComponent implements OnInit {
       email: null,
       cpf: null,
       salario: null,
-      descontos: this.formBuilder.array([]),
+      descontos: this.formBuilder.array([this.formBuilder.group({
+        tipoDesconto: [''],
+        valorDesconto: [null],
+      })]),
       beneficios: this.formBuilder.array([]),
       competencias: this.formBuilder.array([]),
       registro: null,
       senha: null
     })
+
+    console.debug('ONINIT => ', this.formCadastrarColaborador)
   }
 
-  
+  get controls() { return this.formCadastrarColaborador.controls };
+
+  get controlsDescontos() {
+    return this.controls['descontos'] as FormArray; };
+
+  getControl(formArray: string, control: string, i: number): FormControl {
+    return this.formCadastrarColaborador.get([formArray, i, control]) as FormControl;
+  }
+
+  get controlsCompetencias() {return this.controls['competencias'] as FormArray; };
+
   cadastrar() {
     console.log(this.formCadastrarColaborador)
   }
@@ -52,14 +67,19 @@ export class CadastrarColaboradorComponent implements OnInit {
     this.router.navigate([`../painelAdm`])
   }
 
+  
+  getFormInjured() {
+    return this.formBuilder.group({
+      tipoDesconto: [''],
+      valorDesconto: [null],
+    });
+  }
+
   addDesconto() {
-    const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
-    console.debug('descontosArray => ', descontosArray)
-    descontosArray.push(this.formBuilder.group({
-      tipoDesconto: '',
-      valorDesconto: null,
-    }));
-  }  
+    const descontosArray = this.getFormInjured();
+    this.controlsDescontos.push(descontosArray);
+  }
+
 
   removeDesconto(index: number) {
     const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
@@ -85,10 +105,10 @@ export class CadastrarColaboradorComponent implements OnInit {
     return beneficiosArray.controls;
   }
 
-  getDescontos() {
-    const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
-    return descontosArray.controls;
-  }
+  // getDescontos() {
+  //   const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
+  //   return descontosArray.controls;
+  // }
 
   getCompetencias() {
     const competenciasArray = this.formCadastrarColaborador.get('competencias') as FormArray;
