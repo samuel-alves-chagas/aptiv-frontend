@@ -40,7 +40,9 @@ export class CadastrarColaboradorComponent implements OnInit {
         valorDesconto: [null],
       })]),
       beneficios: this.formBuilder.array([]),
-      competencias: this.formBuilder.array([]),
+      competencias: this.formBuilder.array([this.formBuilder.group({
+        competencia: ['']
+      })]),
       registro: null,
       senha: null
     })
@@ -105,18 +107,16 @@ export class CadastrarColaboradorComponent implements OnInit {
     return beneficiosArray.controls;
   }
 
-  // getDescontos() {
-  //   const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
-  //   return descontosArray.controls;
-  // }
 
   getCompetencias() {
-    const competenciasArray = this.formCadastrarColaborador.get('competencias') as FormArray;
-    return competenciasArray.controls;
+    return this.formBuilder.group({
+      competencia: ['']
+    });
   }
 
   addCompetencia() {
-    (this.formCadastrarColaborador.get('competencias') as FormArray).push('');
+    const competenciasArray = this.getCompetencias();
+    this.controlsCompetencias.push(competenciasArray);
   }  
 
   removeCompetencia(index: number) {
