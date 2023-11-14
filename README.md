@@ -5,12 +5,20 @@ APTIV Frontend
 npm install
 ```
 
-Para executar os testes pela interface gráfica:
+Para executar os testes é preciso abri um bash e executar o projeto :
+
+```
+npm run start
+```
+
+Para abrir a interface gráfica abra um novo bash e digite:
+
+
 ```
 ./node_modules/.bin/cypress open
 ```
 
-Para executar os testes por linha de comando:
+Para executar os testes por linha de comando abra um novo bash e digite:
 ```
 ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
 ```
