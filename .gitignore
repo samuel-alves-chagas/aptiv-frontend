@@ -45,3 +45,6 @@ package-lock.json
 
 .angular
 node_modules
+
+videos
+reports
