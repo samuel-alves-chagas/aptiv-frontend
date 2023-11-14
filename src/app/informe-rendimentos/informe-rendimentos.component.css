@@ -44,3 +44,9 @@
     display: flex;
     border-radius: 10px;
 }
+
+.error-message {
+    color:black;
+    margin-top: 10px;
+    font-weight: bold;
+}

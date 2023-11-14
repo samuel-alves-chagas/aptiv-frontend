@@ -25,10 +25,8 @@
             <div class="col-md-3 ">
                 <div class="input-select-group">
                     <label for="unidade" style="margin-right: 25px;">Unidade:</label>
-                    <select id="unidade" class="input-select">
-                        <ng-container *ngFor="let i of ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal']">
-                            <option [value]="i">{{ i }}</option>
-                        </ng-container>
+                    <select id="unidade" class="input-select" formControlName="unidade">
+                        <option *ngFor="let unidade of unidades" [value]="unidade">{{ unidade }}</option>
                     </select>
                 </div>
             </div>
@@ -60,10 +58,8 @@
             <div class="col-md-3 ">
                 <div class="input-select-group">
                     <label for="perfilDeAcesso" style="margin-right: 25px;">Perfil de acesso:</label>
-                    <select id="perfilDeAcesso" class="input-select">
-                        <ng-container *ngFor="let i of ['Padrão', 'Administrativo']">
-                            <option [value]="i">{{ i }}</option>
-                        </ng-container>
+                    <select id="perfilDeAcesso" class="input-select" formControlName="perfilDeAcesso">
+                        <option *ngFor="let perfil of perfisDeAcesso" [value]="perfil">{{ perfil }}</option>
                     </select>
                 </div>
             </div>
@@ -177,8 +173,7 @@
 
         </fieldset>
 
-
-
+        <!--
         <fieldset>
             <legend class="legend-fieldset">Remuneração</legend>
 
@@ -309,6 +304,7 @@
                 </div>
             </div>
         </fieldset>
+        -->
 
         <div class="row justify-content-center mb-2">
             <div class="col-md-3">
@@ -330,7 +326,7 @@
 
         <div>
             <button type="button" style="margin-top: 30px;" (click)="cadastrar()"
-                class="button-cadastrar">Cadastrar</button>
+                class="button-cadastrar" [disabled]="formCadastrarColaborador.invalid">Cadastrar</button>
         </div>
     </form>
 

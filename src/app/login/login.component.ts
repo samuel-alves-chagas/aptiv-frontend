@@ -11,17 +11,20 @@ import { LoginService } from '../services/login.service';
 
 export class LoginComponent implements OnInit{
   public formLogin: FormGroup
+  public errorMessage: String
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
     
   ) {
     this.formLogin = this.formBuilder.group({
       registro: [null, [Validators.required]],
       senha: [null, [Validators.required]]
     })
+
+    this.errorMessage = '';
   }
 
   ngOnInit() {
@@ -31,12 +34,16 @@ export class LoginComponent implements OnInit{
   entrar() {
     const body = this.formLogin.getRawValue();
 
-    this.loginService.login(body).subscribe(res => {
-      if(res) {
-        this.router.navigate([`../home`])
+    this.loginService.login(body).subscribe(
+      (res) => {
+        if (res) {
+          this.router.navigate([`../home`]);
+          this.errorMessage = "";
+        }
+      },
+      (error) => {
+        this.errorMessage = 'Registro ou senha inválidos!';
       }
-    })
-    
-    
+    );
   }
 }

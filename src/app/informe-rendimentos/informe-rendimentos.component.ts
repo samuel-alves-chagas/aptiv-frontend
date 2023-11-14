@@ -7,13 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./informe-rendimentos.component.css']
 })
 export class InformeRendimentosComponent {
+  public errorMessage: String
 
   constructor(
     private router: Router,
     
-  ) {}
+  ) {
+    this.errorMessage = '';
+  }
   download() {
-    
+    this.errorMessage = 'Holerite não encontrado, verifique o mês e ano informado!';
   }
 
   backToPainel() {

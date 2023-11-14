@@ -11,6 +11,10 @@
         <div>
           <input type="password" id="senha" formControlName="senha" placeholder="Senha" class="input-text-senha">
         </div>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
       
         <button type="button" (click)="entrar()" class="button-entrar" [disabled]="formLogin.invalid">ENTRAR</button>
     </form>

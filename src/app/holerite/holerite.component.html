@@ -27,6 +27,10 @@
           </div>
     </div>
 
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
     <button type="button" (click)="download()" class="button-download" >Download <i style="margin-left: 5px;" class="fa fa-download" ></i></button>
 
     <footer style="margin-top: 50px;">

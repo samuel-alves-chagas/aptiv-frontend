@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +12,16 @@ export class RemoverColaboradorComponent implements OnInit {
   public formRemoverColaborador!: FormGroup;
 
   listUsers: any[] = [];
+
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private fb: FormBuilder
-  ) {}
+  ) {
+    this.formRemoverColaborador = this.formBuilder.group({
+      nome: [null, [Validators.required]]
+    })
+  }
 
   ngOnInit() {
     this.formRemoverColaborador = this.fb.group({

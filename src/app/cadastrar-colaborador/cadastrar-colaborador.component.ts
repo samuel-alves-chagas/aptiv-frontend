@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class CadastrarColaboradorComponent implements OnInit {
   public formCadastrarColaborador!: FormGroup
+  public perfisDeAcesso = ['Padrão', 'Administrativo'];
+  public unidades = ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal'];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -18,33 +20,35 @@ export class CadastrarColaboradorComponent implements OnInit {
   }
   ngOnInit() {
     this.formCadastrarColaborador = this.formBuilder.group({
-      nome: null,
-      dataDeAdmissao: null,
-      unidade: null,
-      cargo: null,
-      departamento: null,
-      perfilDeAcesso: null,
-      dataDeNascimento: null,
-      enderecoCep: null,
-      enderecoLogradouro: null,
-      enderecoBairro: null,
-      enderecoCidade: null,
-      enderecoEstado: null,
-      enderecoPais: null,
-      telefone: null,
-      email: null,
-      cpf: null,
-      salario: null,
+      nome: [null, [Validators.required]],
+      dataDeAdmissao: [null, [Validators.required]],
+      unidade: [null, [Validators.required]],
+      cargo: [null, [Validators.required]],
+      departamento: [null, [Validators.required]],
+      perfilDeAcesso: [null, [Validators.required]],
+      dataDeNascimento: [null, [Validators.required]],
+      enderecoCep: [null, [Validators.required]],
+      enderecoLogradouro: [null, [Validators.required]],
+      enderecoBairro: [null, [Validators.required]],
+      enderecoCidade: [null, [Validators.required]],
+      enderecoEstado: [null, [Validators.required]],
+      enderecoPais: [null, [Validators.required]],
+      telefone: [null, [Validators.required]],
+      email: [null, [Validators.required]],
+      cpf: [null, [Validators.required]],
+      /*
+      salario: [null, [Validators.required]],
       descontos: this.formBuilder.array([this.formBuilder.group({
-        tipoDesconto: [''],
-        valorDesconto: [null],
+        tipoDesconto: ['', [Validators.required]],
+        valorDesconto: [null, [Validators.required]],
       })]),
-      beneficios: this.formBuilder.array([]),
+      beneficios: this.formBuilder.array([null]),
       competencias: this.formBuilder.array([this.formBuilder.group({
-        competencia: ['']
+        competencia: ''
       })]),
-      registro: null,
-      senha: null
+      */
+      registro: [null, [Validators.required]],
+      senha: [null, [Validators.required]]
     })
 
     console.debug('ONINIT => ', this.formCadastrarColaborador)

@@ -15,9 +15,18 @@
     color: white; /* Define a cor do texto para branco */
     border: none; /* Remove a borda */
     padding: 10px 20px; /* Adicione algum preenchimento para melhor aparência */
-    cursor: pointer; /* Mude o cursor para indicar que é clicável */
     font-family: "Arial", sans-serif;
     letter-spacing: 2px;
+}
+
+.button-cadastrar:disabled {
+    cursor: not-allowed; /* Define o cursor para 'não permitido' quando desativado */
+    background-color: #bd6751; /* Define uma cor mais clara quando desativado */
+}
+
+/* Altera o cursor para apontar quando ativado e não desativado */
+.button-cadastrar:not(:disabled) {
+    cursor: pointer;
 }
 
 .input-text-group {
