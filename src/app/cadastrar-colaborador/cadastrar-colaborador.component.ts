@@ -36,17 +36,18 @@ export class CadastrarColaboradorComponent implements OnInit {
       telefone: [null, [Validators.required]],
       email: [null, [Validators.required]],
       cpf: [null, [Validators.required]],
-      /*
       salario: [null, [Validators.required]],
       descontos: this.formBuilder.array([this.formBuilder.group({
         tipoDesconto: ['', [Validators.required]],
         valorDesconto: [null, [Validators.required]],
       })]),
-      beneficios: this.formBuilder.array([null]),
+      // beneficios: this.formBuilder.array([this.formBuilder.group({
+      //   tipoBeneficio: ['', [Validators.required]],
+      //   valorBeneficio: [null, [Validators.required]],
+      // })]),
       competencias: this.formBuilder.array([this.formBuilder.group({
-        competencia: ''
+        competencia: ['', [Validators.required]]
       })]),
-      */
       registro: [null, [Validators.required]],
       senha: [null, [Validators.required]]
     })
@@ -76,8 +77,8 @@ export class CadastrarColaboradorComponent implements OnInit {
   
   getFormInjured() {
     return this.formBuilder.group({
-      tipoDesconto: [''],
-      valorDesconto: [null],
+      tipoDesconto: ['', [Validators.required]],
+      valorDesconto: [null, [Validators.required]],
     });
   }
 
@@ -94,8 +95,8 @@ export class CadastrarColaboradorComponent implements OnInit {
 
   addBeneficio() {
     const novoBeneficio = this.formBuilder.group({
-      tipoBeneficio: '',
-      valorBeneficio: null,
+      tipoBeneficio: ['', [Validators.required]],
+      valorBeneficio: [null, [Validators.required]],
     });
     
     (this.formCadastrarColaborador.get('beneficios') as FormArray).push(novoBeneficio);
@@ -114,7 +115,7 @@ export class CadastrarColaboradorComponent implements OnInit {
 
   getCompetencias() {
     return this.formBuilder.group({
-      competencia: ['']
+      competencia: ['', [Validators.required]],
     });
   }
 
