@@ -5,7 +5,7 @@ import { enviroment } from 'src/environments/environments';
 @Injectable({
   providedIn: 'root'
 })
-export class RemoverColaboradorService {
+export class ColaboradorService {
 
   constructor(private http: HttpClient) { }
 
@@ -15,5 +15,10 @@ export class RemoverColaboradorService {
 
   deletarColaborador(id: number) {
     return this.http.delete(`${enviroment.loginUrl}/colaborador/${id}`);
+  }
+
+  getBeneficiosByColaborador(id: string){
+    return this.http.get(`${enviroment.loginUrl}/colaborador/beneficio/${id}`);
+
   }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../services/login.service';
+import { LoginService } from '../services/login/login.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -34,16 +35,13 @@ export class LoginComponent implements OnInit{
   entrar() {
     const body = this.formLogin.getRawValue();
 
-    this.loginService.login(body).subscribe(
-      (res) => {
-        if (res) {
-          this.router.navigate([`../home`]);
-          this.errorMessage = "";
-        }
-      },
-      (error) => {
-        this.errorMessage = 'Registro ou senha inválidos!';
+    this.loginService.login(body).pipe(take(1)).subscribe((res: any) => {
+
+      if(res) {
+        const user = {user: res.nome, perfil: res.perfil_de_acesso, id: res._id}
+        localStorage.setItem('user', JSON.stringify(user))
+        this.router.navigate([`../home`]);
       }
-    );
+    })
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RemoverColaboradorService } from '../services/remover-colaborador.service';
+import { ColaboradorService } from '../services/colaborador/colaborador.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -20,7 +20,7 @@ export class RemoverColaboradorComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private fb: FormBuilder,
-    private removerColaborador: RemoverColaboradorService,
+    private colaboradorService: ColaboradorService,
   ) {
     this.formRemoverColaborador = this.formBuilder.group({
       nome: [null, [Validators.required]]
@@ -43,7 +43,7 @@ export class RemoverColaboradorComponent implements OnInit {
   }
 
   mountList(): Observable<any[]> {
-    return this.removerColaborador.listarColaboradores().pipe(
+    return this.colaboradorService.listarColaboradores().pipe(
       map((res: any) => {
         if (res && Array.isArray(res)) {
           return res.map((colaborador: any) => ({
@@ -62,7 +62,7 @@ export class RemoverColaboradorComponent implements OnInit {
   }
 
   removeColaborador(id: number) {
-    this.removerColaborador.deletarColaborador(id).subscribe(
+    this.colaboradorService.deletarColaborador(id).subscribe(
         (data) => {
             this.mountList().subscribe(
                 (colaboradores: any[]) => {
