@@ -21,4 +21,9 @@ export class ColaboradorService {
     return this.http.get(`${enviroment.loginUrl}/colaborador/beneficio/${id}`);
 
   }
+
+  getFeriasByColaborador(id: string){
+    return this.http.get(`${enviroment.loginUrl}/colaborador/ferias/${id}`);
+
+  }
 }
