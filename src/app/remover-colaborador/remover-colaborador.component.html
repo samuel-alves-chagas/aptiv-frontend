@@ -14,6 +14,15 @@
         </div>
     </form>
 
+    <ng-container *ngIf="!listUsers.length">
+        <div class="container-select">
+            <div class="list-colaboradores">
+                <span>Colaborador não encontrado!
+                </span>
+            </div>
+        </div>
+    </ng-container>
+
     <ng-container *ngFor="let colaborador of listUsers">
         <div class="container-select">
             <div class="list-colaboradores">

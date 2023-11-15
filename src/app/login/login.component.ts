@@ -41,7 +41,10 @@ export class LoginComponent implements OnInit{
         const user = {user: res.nome, perfil: res.perfil_de_acesso, id: res._id}
         localStorage.setItem('user', JSON.stringify(user))
         this.router.navigate([`../home`]);
+        this.errorMessage = "";
       }
+    },(error) => {
+      this.errorMessage = 'Registro ou senha inválidos!';
     })
   }
 }
