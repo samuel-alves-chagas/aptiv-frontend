@@ -9,6 +9,10 @@ export class ColaboradorService {
 
   constructor(private http: HttpClient) { }
 
+  cadastrar(body: any) {
+    return this.http.post(`${enviroment.loginUrl}/colaborador`, body)
+  }
+
   listarColaboradores() {
     return this.http.get(`${enviroment.loginUrl}/colaborador`);
   }

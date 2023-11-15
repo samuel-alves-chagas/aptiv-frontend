@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ColaboradorService } from '../services/colaborador/colaborador.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-cadastrar-colaborador',
@@ -9,23 +11,27 @@ import { Router } from '@angular/router';
 })
 export class CadastrarColaboradorComponent implements OnInit {
   public formCadastrarColaborador!: FormGroup
+  public errorMessage: String
   public perfisDeAcesso = ['Padrão', 'Administrativo'];
   public unidades = ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal'];
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-  ) {
+    private colaboradorService: ColaboradorService,
 
+  ) {
+    this.errorMessage = '';
   }
+
   ngOnInit() {
     this.formCadastrarColaborador = this.formBuilder.group({
       nome: [null, [Validators.required]],
-      dataDeAdmissao: [null, [Validators.required]],
-      unidade: [null, [Validators.required]],
+      data_admissao: [null, [Validators.required]],
+      id_unidade: [null, [Validators.required]],
       cargo: [null, [Validators.required]],
       departamento: [null, [Validators.required]],
-      perfilDeAcesso: [null, [Validators.required]],
+      perfil_de_acesso: [null, [Validators.required]],
       dataDeNascimento: [null, [Validators.required]],
       enderecoCep: [null, [Validators.required]],
       enderecoLogradouro: [null, [Validators.required]],
@@ -38,8 +44,8 @@ export class CadastrarColaboradorComponent implements OnInit {
       cpf: [null, [Validators.required]],
       salario: [null, [Validators.required]],
       descontos: this.formBuilder.array([this.formBuilder.group({
-        tipoDesconto: ['', [Validators.required]],
-        valorDesconto: [null, [Validators.required]],
+        tipo: ['', [Validators.required]],
+        valor: [null, [Validators.required]],
       })]),
       beneficios: this.formBuilder.group({
         valeAlimentacao: [false],
@@ -60,27 +66,88 @@ export class CadastrarColaboradorComponent implements OnInit {
   get controls() { return this.formCadastrarColaborador.controls };
 
   get controlsDescontos() {
-    return this.controls['descontos'] as FormArray; };
+    return this.controls['descontos'] as FormArray;
+  };
 
   getControl(formArray: string, control: string, i: number): FormControl {
     return this.formCadastrarColaborador.get([formArray, i, control]) as FormControl;
   }
 
-  get controlsCompetencias() {return this.controls['competencias'] as FormArray; };
+  get controlsCompetencias() { return this.controls['competencias'] as FormArray; };
 
   cadastrar() {
     console.log(this.formCadastrarColaborador)
+
+    const received = this.formCadastrarColaborador.getRawValue();
+
+    let beneficios = []
+    if(received.beneficios.valeAlimentacao) {
+      beneficios.push({nome: 'Vale alimentação'})
+    }
+    if(received.beneficios.valeRefeicao) {
+      beneficios.push({nome: 'Vale refeição'})
+    }
+    if(received.beneficios.convenioMedico) {
+      beneficios.push({nome: 'Convênio médico'})
+    }
+    if(received.beneficios.dayOff) {
+      beneficios.push({nome: 'Day off no aniversário'})
+    }
+
+    const body = {
+      nome: received.nome,
+      cargo: received.cargo,
+      departamento: received.departamento,
+      perfil_de_acesso: received.perfil_de_acesso,
+      data_admissao: received.data_admissao,
+      id_unidade: received.id_unidade,
+      dados_pessoais: {
+        data_nascimento: received.dataDeNascimento, 
+        endereco: {
+          logradouro: received.enderecoLogradouro,
+          bairro: received.enderecoBairro,
+          cidade: received.enderecoCidade,
+          estado: received.enderecoEstado,
+          cep: received.enderecoCep,
+          pais: received.enderecoPais
+        },
+        telefone: received.telefone,
+        email: received.email,
+        cpf: received.cpf
+      },
+      ferias: {
+        dias_de_saldo: 0,
+      },
+      remuneracao: {
+        salario_base: received.salario,
+        descontos: received.descontos,
+        beneficios: beneficios
+      },
+      competencias: received.competencias.map((e:any) => e.competencia),
+      registro: received.registro,
+      senha: received.senha
+    }
+
+    this.colaboradorService.cadastrar(body).pipe(take(1)).subscribe((res: any) => {
+
+      if (res) {
+        console.log(res)
+        this.router.navigate([`../painelAdm`]);
+        this.errorMessage = "";
+      }
+    }, (error) => {
+      this.errorMessage = 'Falha ao cadastrar colaborador';
+    })
   }
 
   backToPainel() {
     this.router.navigate([`../painelAdm`])
   }
 
-  
   getFormInjured() {
     return this.formBuilder.group({
-      tipoDesconto: ['', [Validators.required]],
-      valorDesconto: [null, [Validators.required]],
+      tipo: ['', [Validators.required]],
+      valor: [null, [Validators.required]],
     });
   }
 
@@ -88,7 +155,6 @@ export class CadastrarColaboradorComponent implements OnInit {
     const descontosArray = this.getFormInjured();
     this.controlsDescontos.push(descontosArray);
   }
-
 
   removeDesconto(index: number) {
     const descontosArray = this.formCadastrarColaborador.get('descontos') as FormArray;
@@ -108,7 +174,7 @@ export class CadastrarColaboradorComponent implements OnInit {
   addCompetencia() {
     const competenciasArray = this.getCompetencias();
     this.controlsCompetencias.push(competenciasArray);
-  }  
+  }
 
   removeCompetencia(index: number) {
     const beneficiosArray = this.formCadastrarColaborador.get('competencias') as FormArray;

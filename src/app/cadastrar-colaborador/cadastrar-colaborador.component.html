@@ -15,8 +15,8 @@
         <div class="row justify-content-center mb-2">
             <div class="col-md-3 ">
                 <div class="input-date-group">
-                    <label for="dataDeAdmissao" style="margin-right: 25px;">Data de admissão:</label>
-                    <input type="date" id="dataDeAdmissao" formControlName="dataDeAdmissao" class="input-date">
+                    <label for="data_admissao" style="margin-right: 25px;">Data de admissão:</label>
+                    <input type="date" id="data_admissao" formControlName="data_admissao" class="input-date">
                 </div>
             </div>
         </div>
@@ -25,8 +25,8 @@
             <div class="col-md-3 ">
                 <div class="input-select-group">
                     <label for="unidade" style="margin-right: 25px;">Unidade:</label>
-                    <select id="unidade" class="input-select" formControlName="unidade">
-                        <option *ngFor="let unidade of unidades" [value]="unidade">{{ unidade }}</option>
+                    <select id="unidade" class="input-select" formControlName="id_unidade">
+                        <option *ngFor="let unidade of unidades" [value]="unidades.indexOf(unidade)">{{ unidade }}</option>
                     </select>
                 </div>
             </div>
@@ -57,8 +57,8 @@
         <div class="row justify-content-center mb-2">
             <div class="col-md-3 ">
                 <div class="input-select-group">
-                    <label for="perfilDeAcesso" style="margin-right: 25px;">Perfil de acesso:</label>
-                    <select id="perfilDeAcesso" class="input-select" formControlName="perfilDeAcesso">
+                    <label for="perfil_de_acesso" style="margin-right: 25px;">Perfil de acesso:</label>
+                    <select id="perfil_de_acesso" class="input-select" formControlName="perfil_de_acesso">
                         <option *ngFor="let perfil of perfisDeAcesso" [value]="perfil">{{ perfil }}</option>
                     </select>
                 </div>
@@ -198,9 +198,9 @@
                                     <div class="row justify-content-center mb-2 mt-2">
                                         <div class="col-md-12">
                                             <div class="input-text-group">
-                                                <label for="tipoDesconto" style="margin-right: 25px;">Tipo:</label>
-                                                <input type="text" [id]="'tipoDesconto'"
-                                                    [formControl]="getControl('descontos', 'tipoDesconto', i)"
+                                                <label for="tipo" style="margin-right: 25px;">Tipo:</label>
+                                                <input type="text" [id]="'tipo'"
+                                                    [formControl]="getControl('descontos', 'tipo', i)"
                                                     class="input-text">
                                             </div>
                                         </div>
@@ -208,9 +208,9 @@
                                     <div class="row justify-content-center mb-2 mt-2">
                                         <div class="col-md-12">
                                             <div class="input-text-group">
-                                                <label for="valorDesconto" style="margin-right: 25px;">Valor:</label>
-                                                <input type="number" [id]="'valorDesconto'"
-                                                    [formControl]="getControl('descontos', 'valorDesconto', i)"
+                                                <label for="valor" style="margin-right: 25px;">Valor:</label>
+                                                <input type="number" [id]="'valor'"
+                                                    [formControl]="getControl('descontos', 'valor', i)"
                                                     class="input-text">
                                             </div>
                                         </div>
