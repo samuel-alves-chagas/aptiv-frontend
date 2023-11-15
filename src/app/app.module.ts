@@ -16,7 +16,11 @@ import { BeneficiosComponent } from './beneficios/beneficios.component';
 import { PainelAdmComponent } from './painel-adm/painel-adm.component';
 import { CadastrarColaboradorComponent } from './cadastrar-colaborador/cadastrar-colaborador.component';
 import { RemoverColaboradorComponent } from './remover-colaborador/remover-colaborador.component'
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoaderService } from './services/loader/loader.service';
+import { LoaderInterceptor } from './services/interceptor/loader-interceptor.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,9 +49,18 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     NgbModule,
     NgbDropdownModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
