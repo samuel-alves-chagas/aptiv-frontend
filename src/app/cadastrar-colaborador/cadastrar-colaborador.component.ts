@@ -41,10 +41,12 @@ export class CadastrarColaboradorComponent implements OnInit {
         tipoDesconto: ['', [Validators.required]],
         valorDesconto: [null, [Validators.required]],
       })]),
-      // beneficios: this.formBuilder.array([this.formBuilder.group({
-      //   tipoBeneficio: ['', [Validators.required]],
-      //   valorBeneficio: [null, [Validators.required]],
-      // })]),
+      beneficios: this.formBuilder.group({
+        valeAlimentacao: [false],
+        valeRefeicao: [false],
+        convenioMedico: [false],
+        dayOff: [false],
+      }),
       competencias: this.formBuilder.array([this.formBuilder.group({
         competencia: ['', [Validators.required]]
       })]),
@@ -93,25 +95,9 @@ export class CadastrarColaboradorComponent implements OnInit {
     descontosArray.removeAt(index);
   }
 
-  addBeneficio() {
-    const novoBeneficio = this.formBuilder.group({
-      tipoBeneficio: ['', [Validators.required]],
-      valorBeneficio: [null, [Validators.required]],
-    });
-    
-    (this.formCadastrarColaborador.get('beneficios') as FormArray).push(novoBeneficio);
-  }  
-
-  removeBeneficio(index: number) {
-    const beneficiosArray = this.formCadastrarColaborador.get('beneficios') as FormArray;
-    beneficiosArray.removeAt(index);
-  }
-
   getBeneficios() {
-    const beneficiosArray = this.formCadastrarColaborador.get('beneficios') as FormArray;
-    return beneficiosArray.controls;
+    return this.formCadastrarColaborador.get('beneficios') as FormGroup;
   }
-
 
   getCompetencias() {
     return this.formBuilder.group({

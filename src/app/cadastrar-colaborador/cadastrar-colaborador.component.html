@@ -228,41 +228,25 @@
                         <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="addDesconto()" class="fa fa-plus"></i>
 
                     </fieldset>
-                    <!--
+
                     <fieldset>
                         <legend class="legend-fieldset">Benefícios</legend>
 
+                        <ng-container *ngIf="formCadastrarColaborador?.controls?.['beneficios']">
+                            <form [formGroup]="getBeneficios()">
+                                
+                                <input type="checkbox" value="Vale alimentação" formControlName="valeAlimentacao"/>
+                                <label style="padding-left: 5px;">Vale alimentação</label><br />
+                                <input type="checkbox" value="Vale refeição" formControlName="valeRefeicao"/>
+                                <label style="padding-left: 5px;">Vale refeição</label><br />
+                                <input type="checkbox" value="Convênio médico" formControlName="convenioMedico"/>
+                                <label style="padding-left: 5px;">Convênio médico</label><br />
+                                <input type="checkbox" value="Day off no aniversário" formControlName="dayOff"/>
+                                <label style="padding-left: 5px;">Day off no aniversário</label><br />
+                            </form>
 
-                        <ng-container *ngFor="let beneficio of getBeneficios(); let i = index">
-                            <div [formGroupName]="i">
-                                <div class="row justify-content-center mb-2 mt-2">
-                                    <div class="col-md-12">
-                                        <div class="input-text-group">
-                                            <label for="tipoBeneficio" style="margin-right: 25px;">Tipo:</label>
-                                            <input type="text" id="tipoBeneficio" formControlName="tipoBeneficio"
-                                                class="input-text">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center mb-2 mt-2">
-                                    <div class="col-md-12">
-                                        <div class="input-text-group">
-                                            <label for="valorBeneficio" style="margin-right: 25px;">Valor:</label>
-                                            <input type="number" id="valorBeneficio" formControlName="valorBeneficio"
-                                                class="input-text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="removeBeneficio(i)"
-                                class="fa fa-trash"></i>
                         </ng-container>
-
-                        <i style="margin-left: 1rem;margin-top: 0.5rem;" (click)="addBeneficio()"
-                            class="fa fa-plus"></i>
                     </fieldset>
-                    -->
-
                 </div>
             </div>
         </fieldset>
@@ -324,8 +308,9 @@
         </div>
 
         <div>
-            <button type="button" style="margin-top: 30px;" (click)="cadastrar()"
-                class="button-cadastrar" [disabled]="formCadastrarColaborador.invalid">Cadastrar</button>
+            <!-- <button type="button" style="margin-top: 30px;" (click)="cadastrar()" class="button-cadastrar"
+                [disabled]="formCadastrarColaborador.invalid">Cadastrar</button> -->
+            <button type="button" style="margin-top: 30px;" (click)="cadastrar()" class="button-cadastrar">Cadastrar</button>
         </div>
     </form>
 
