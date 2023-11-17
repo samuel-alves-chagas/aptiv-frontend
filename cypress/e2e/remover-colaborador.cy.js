@@ -4,7 +4,7 @@ describe('Criando cenários de teste para remover colaborador', () => {
 
   it('Caso de teste: Colaborador encontrado na pesquisa', () => {
     cy.visit('localhost:4200')
-    cy.get('#registro').type('1704')
+    cy.get('#registro').type('0001')
     cy.get('#senha').type('123456')
     cy.get('.button-entrar').click()
     cy.get(':nth-child(5) > button').click()
@@ -16,7 +16,7 @@ describe('Criando cenários de teste para remover colaborador', () => {
 
   it('Caso de teste: Colaborador não encontrado na pesquisa', () => {
     cy.visit('localhost:4200')
-    cy.get('#registro').type('1704')
+    cy.get('#registro').type('0001')
     cy.get('#senha').type('123456')
     cy.get('.button-entrar').click()
     cy.get(':nth-child(5) > button').click()
