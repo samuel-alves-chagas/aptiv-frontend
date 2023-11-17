@@ -16,7 +16,7 @@ export class InformeRendimentosComponent {
     this.errorMessage = '';
   }
   download() {
-    this.errorMessage = 'Holerite não encontrado, verifique o mês e ano informado!';
+    this.errorMessage = 'Informe de rendimentos não encontrado, verifique o ano informado!';
   }
 
   backToPainel() {
