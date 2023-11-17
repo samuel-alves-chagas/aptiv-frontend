@@ -73,6 +73,8 @@ export class CadastrarColaboradorComponent implements OnInit {
       senha: [null, [Validators.required]]
     })
 
+    //console.log(this.formCadastrarColaborador)
+
     //console.debug('ONINIT => ', this.formCadastrarColaborador)
   }
 
