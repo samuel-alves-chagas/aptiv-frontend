@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ColaboradorService } from '../services/colaborador/colaborador.service';
-import { take } from 'rxjs';
+import { map, take } from 'rxjs';
+import { UnidadeService } from '../services/unidade/unidade.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cadastrar-colaborador',
@@ -13,18 +15,29 @@ export class CadastrarColaboradorComponent implements OnInit {
   public formCadastrarColaborador!: FormGroup
   public errorMessage: String
   public perfisDeAcesso = ['Padrão', 'Administrativo'];
-  public unidades = ['Conceição dos Outros', 'Paraisópolis', 'Es. Santo do Pinhal'];
+  
+  listUnidades: any[] = [];
+  listBeneficios: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private colaboradorService: ColaboradorService,
-
+    private unidadeService: UnidadeService
   ) {
     this.errorMessage = '';
   }
 
   ngOnInit() {
+    this.mountListUnidades().subscribe(
+      (unidades: any[]) => {
+        this.listUnidades = unidades;
+      },
+      (error) => {
+        console.error('Erro ao carregar unidades', error);
+      }
+    );
+
     this.formCadastrarColaborador = this.formBuilder.group({
       nome: [null, [Validators.required]],
       data_admissao: [null, [Validators.required]],
@@ -60,7 +73,21 @@ export class CadastrarColaboradorComponent implements OnInit {
       senha: [null, [Validators.required]]
     })
 
-    console.debug('ONINIT => ', this.formCadastrarColaborador)
+    //console.debug('ONINIT => ', this.formCadastrarColaborador)
+  }
+
+  mountListUnidades(): Observable<any[]> {
+    return this.unidadeService.listarUnidades().pipe(
+      map((res: any) => {
+        if (res && Array.isArray(res)) {
+          return res.map((unidade: any) => ({
+            id: unidade._id,
+            name: unidade.nome
+          }));
+        }
+        return [];
+      })
+    ) as Observable<any[]>;
   }
 
   get controls() { return this.formCadastrarColaborador.controls };
