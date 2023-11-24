@@ -1,14 +1,13 @@
 .container-fluid {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #F9ECE1;
-    width: 100%; /* Largura da div */    
-    height: 100%; /* Altura da div */    
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a div */    
-    background-position: center; /* Centraliza a imagem na div */    
-    color: black; /* Cor do texto dentro da div (se desejar texto) */    
-    text-align: center; /* Alinhamento do texto (se desejar texto) */    
-    padding: 20px; /* Espaçamento interno da div (se desejar espaço ao redor do conteúdo) */
+    width: 100%;  
+    height: 100vh;
+    text-align: center;
 }
-
 .button-painelAdm {
     margin-top: 25px;
     background-color: white;
@@ -26,4 +25,16 @@
 
 .button-painelAdm i {
     font-size: 25px; /* Tornar o ícone maior */
+}
+
+footer {
+    margin-top: auto; /* Isso empurra o footer para o final da página */
+    background-color: #F9ECE1;
+    padding: 10px;
+    text-align: center;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
 }

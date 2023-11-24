@@ -1,14 +1,13 @@
 <div class="class">
-    <ul>
-        <li *ngFor="let module of modules">
+    <div style="padding: 2%; margin: auto;">
+        <ng-container *ngFor="let module of modules">
             <ng-container *ngIf="module.visible">
-                <button type="button" style="height: 8rem; width: 24rem;" (click)="redirectTo(module.path)">
-                    {{module.name}} 
-                    <i style="margin-left: 1rem;margin-top: 0.5rem;" [ngClass]="module.icon"></i>
+                <button type="button" (click)="redirectTo(module.path)">
+                    {{module.name}}
+                    <i [ngClass]="module.icon"></i>
                 </button>
             </ng-container>
-            
-        </li>
-    </ul>
-    
+        </ng-container>
+    </div>
+
 </div>
