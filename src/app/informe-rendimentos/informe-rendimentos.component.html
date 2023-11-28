@@ -3,12 +3,13 @@
 </app-header>
 
 <div class="container-fluid">
+  <form [formGroup]="formBuscarInformeDeRendimentos">
     <p class="texto-topo">Insira o ano do Informe de Rendimento</p>
   
     <div class="container-select">
         <div class="select-ano">
             <label for="ano" style="margin-right: 25px;">Ano:</label>
-            <select id="ano">
+            <select id="ano" formControlName="ano">
               <ng-container *ngFor="let i of [2019, 2020, 2021, 2022, 2023]">
                 <option [value]="i">{{ i }}</option>
               </ng-container>
@@ -27,5 +28,6 @@
     <footer>
         <img src="../../assets/aptiv-logo-preto.png">
     </footer>
+  </form>
 </div>
   

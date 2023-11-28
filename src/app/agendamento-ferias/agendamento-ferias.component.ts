@@ -31,7 +31,7 @@ export class AgendamentoFeriasComponent implements OnInit{
 
     this.colaboradorService.getFeriasByColaborador(JSON.parse(user).id)
     .pipe(take(1)).subscribe((res: any) => {
-      console.debug(res)
+      console.log(res)
       const ferias = res.historico_ferias.map((e: any) => {
         if(e.status == 'Em análise') {
           this.saida = format(new Date(e.data_inicio), 'dd/MM/yyyy')

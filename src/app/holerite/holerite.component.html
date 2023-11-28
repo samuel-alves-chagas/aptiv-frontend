@@ -3,12 +3,13 @@
 </app-header>
 
 <div class="container-fluid">
+  <form [formGroup]="formBuscarHolerite">
     <p class="texto-topo">Informe o mês e ano do holerite desejado</p>
   
     <div class="container-select">
         <div class="select-mes">
             <label for="mes" style="margin-right: 25px;">Mês:</label>
-            <select id="mes">
+            <select id="mes" formControlName="mes">
               <ng-container *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
                 <option [value]="i">{{ i }}</option>
               </ng-container>
@@ -19,7 +20,7 @@
     <div class="container-select">
         <div class="select-ano">
             <label for="ano" style="margin-right: 25px;">Ano:</label>
-            <select id="ano">
+            <select id="ano" formControlName="ano">
               <ng-container *ngFor="let i of [2019, 2020, 2021, 2022, 2023]">
                 <option [value]="i">{{ i }}</option>
               </ng-container>
@@ -38,5 +39,6 @@
     <footer>
         <img src="../../assets/aptiv-logo-preto.png">
     </footer>
+  </form>
 </div>
   
