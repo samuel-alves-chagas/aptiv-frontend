@@ -41,7 +41,7 @@ export class SelectCardsComponent implements OnInit {
     },
     {
       name: 'Painel administrativo',
-      icon: ['fa-solid','fa-grin-alt'],
+      icon: ['fa-solid','fa-pen'],
       path: '/painelAdm',
       visible: false
     },
