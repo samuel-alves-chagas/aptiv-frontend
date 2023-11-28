@@ -29,11 +29,11 @@ export class InformeRendimentosComponent implements OnInit {
     this.errorMessage = '';
 
     const user: any = localStorage.getItem('user');
-    const received = this.formBuscarInformeDeRendimentos.getRawValue();
+    const dadosDoFormulario = this.formBuscarInformeDeRendimentos.getRawValue();
 
     const funcionario_id = JSON.parse(user).id
-    const mes = received.mes;
-    const ano = received.ano;
+    const mes = dadosDoFormulario.mes;
+    const ano = dadosDoFormulario.ano;
 
     const body = {
       funcionario_id: funcionario_id,
@@ -42,11 +42,10 @@ export class InformeRendimentosComponent implements OnInit {
         ano: ano
       }
     }
-    
+
     this.documentoService.getDocumentoByDataEColaborador(body)
     .pipe(take(1)).subscribe((res: any) => {
-
-      if (res && res.url_arquivo) {
+      if (res) {
         this.realizarDownload(res.url_arquivo)
         this.errorMessage = "";
       }
