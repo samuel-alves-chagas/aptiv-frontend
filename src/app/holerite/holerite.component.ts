@@ -30,6 +30,8 @@ export class HoleriteComponent implements OnInit {
   }
   
   download() {
+    this.errorMessage = '';
+    
     const user: any = localStorage.getItem('user');
     const received = this.formBuscarHolerite.getRawValue();
 
@@ -45,8 +47,6 @@ export class HoleriteComponent implements OnInit {
         ano: ano
       }
     }
-
-    console.log(body)
 
     this.documentoService.getDocumentoByDataEColaborador(body)
     .pipe(take(1)).subscribe((res: any) => {
