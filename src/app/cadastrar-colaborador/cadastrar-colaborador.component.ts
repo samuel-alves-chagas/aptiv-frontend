@@ -123,11 +123,14 @@ export class CadastrarColaboradorComponent implements OnInit {
       beneficios.push({nome: 'Day off no aniversário'})
     }
 
+    let perfil = received.perfil_de_acesso;
+    perfil = perfil === "Administrativo" ? "admin" : perfil;
+
     const body = {
       nome: received.nome,
       cargo: received.cargo,
       departamento: received.departamento,
-      perfil_de_acesso: received.perfil_de_acesso,
+      perfil_de_acesso: perfil,
       data_admissao: received.data_admissao,
       id_unidade: received.id_unidade,
       dados_pessoais: {
