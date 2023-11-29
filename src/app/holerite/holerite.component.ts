@@ -36,8 +36,8 @@ export class HoleriteComponent implements OnInit {
     const received = this.formBuscarHolerite.getRawValue();
 
     const funcionario_id = JSON.parse(user).id
-    const mes = received.mes;
-    const ano = received.ano;
+    const mes = parseInt(received.mes);
+    const ano = parseInt(received.ano);
 
     const body = {
       funcionario_id: funcionario_id,

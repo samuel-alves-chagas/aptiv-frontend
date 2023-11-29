@@ -32,8 +32,7 @@ export class InformeRendimentosComponent implements OnInit {
     const dadosDoFormulario = this.formBuscarInformeDeRendimentos.getRawValue();
 
     const funcionario_id = JSON.parse(user).id
-    const mes = dadosDoFormulario.mes;
-    const ano = dadosDoFormulario.ano;
+    let ano = parseInt(dadosDoFormulario.ano);
 
     const body = {
       funcionario_id: funcionario_id,
